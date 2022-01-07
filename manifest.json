@@ -1,0 +1,14 @@
+{
+  "name": "New Tab",
+  "description": "New start page for chrome",
+  "icons": {
+    "16": "/assets/home-icon-16.png",
+    "48": "/assets/home-icon-48.png",
+    "128": "/assets/home-icon-128.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "manifest_version": 3,
+  "version": "1.0.0"
+}
