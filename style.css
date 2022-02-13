@@ -1,10 +1,17 @@
 :root {
-  --color-alpha: #f7f7f7aa;
-  --color-alpha-sub: #f7f7f7;
+  /* --color-alpha: #f7f7f7;
+  --color-alpha-sub: #f7f7f7aa;
   --color-beta: #ffffff;
   --color-gamma: #4b4b4b;
   --color-delta: #000000;
-  --color-shadow: #03030325;
+  --color-shadow: #03030325; */
+
+  --color-alpha: #202124;
+  --color-alpha-sub: #202124aa;
+  --color-beta: #ffffff;
+  --color-gamma: #61646d;
+  --color-delta: #9da0a5;
+  --color-shadow: #82838a25;
 
   --card-header-height: 25%;
   --background-blur: blur(15px);
@@ -20,7 +27,7 @@
   outline: none;
   border: none;
   text-decoration: none;
-  font-size: 90%;
+  font-size: 95%;
 }
 
 body {
@@ -54,6 +61,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 0.5rem;
 }
 
 .time {
@@ -117,10 +125,6 @@ body {
 }
 
 @media screen and (max-width: 1706px) {
-  * {
-    font-size: 100%;
-  }
-
   .cards {
     grid-template-columns: repeat(3, 15rem);
     grid-template-rows: repeat(2, 22.5rem);

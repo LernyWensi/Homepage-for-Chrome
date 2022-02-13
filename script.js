@@ -4,10 +4,13 @@ const blackBox = document.querySelector(".black-box");
 
 const searchBarInput = document.querySelector(".search-bar-input");
 
-searchBarInput.addEventListener("mouseleave", (e) => {
-  e.target.value = "";
-  e.target.blur();
-});
+const clearSearchBar = () => {
+  searchBarInput.value = "";
+  searchBarInput.blur();
+};
+
+document.onclick = (e) => e.target !== searchBarInput && clearSearchBar();
+searchBarInput.onmouseleave = clearSearchBar;
 
 const tick = () => {
   const hours =
@@ -33,7 +36,7 @@ const tick = () => {
   date.innerHTML = `${day} | ${month} | ${year}`;
 };
 
-function toggleFullScreen() {
+const toggleFullScreen = () => {
   if (!document.fullscreenElement) {
     document.documentElement.requestFullscreen();
   } else {
@@ -41,12 +44,23 @@ function toggleFullScreen() {
       document.exitFullscreen();
     }
   }
-}
+};
+
+const searchBarFocus = (e) => {
+  searchBarInput === document.activeElement
+    ? clearSearchBar()
+    : searchBarInput.focus();
+};
 
 document.addEventListener("keydown", (e) => {
   if (e.key == "F11") {
     e.preventDefault();
     toggleFullScreen();
+  }
+
+  if (e.key == "/") {
+    e.preventDefault();
+    searchBarFocus(e);
   }
 });
 
